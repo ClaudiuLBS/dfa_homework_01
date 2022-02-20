@@ -55,6 +55,5 @@ def pretty_print(input_matrix:dict):
       print(f'({item[0]}, {item[1]}) ', end='')
     print()
 
-
 pretty_print(transitions)
 # print(sigma, states, initial_states, final_states ,sep='\n')
