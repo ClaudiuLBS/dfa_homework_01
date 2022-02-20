@@ -1,0 +1,33 @@
+#
+# comment l i n e s ( s ki p them )
+#
+Sigma:
+a
+b
+c
+d
+e
+End
+#
+# comment l i n e s ( s ki p them )
+#
+States:
+q0 ,S
+q1
+q3 , F
+q4 ,F
+q5
+End
+#
+# comment l i n e s ( s ki p them )
+#
+Transitions:
+q0, a, q2
+q0, b, q4
+q0, c, q5
+q1, a, q4
+q1, b, q5
+q2, a, q3
+q2, b, q4
+q4, a, q5
+End
