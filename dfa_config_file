@@ -14,6 +14,7 @@ End
 States:
 q0 ,S
 q1
+q2
 q3 , F
 q4 ,F
 q5
