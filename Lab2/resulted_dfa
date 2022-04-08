@@ -1,0 +1,34 @@
+Sigma:
+	a
+	b
+End
+
+States:
+	q0, S
+	q1q3, F
+	q2
+	q2q4
+	q1
+	q3, F
+	q0q2
+	q4
+	q2q3, F
+End
+
+Transition:
+	q0, a, q1q3
+	q0, b, q2
+	q1q3, a, q2q4
+	q1q3, b, q1
+	q2, b, q3
+	q2q4, a, q0q2
+	q2q4, b, q3
+	q1, a, q2q4
+	q3, a, q4
+	q3, b, q1
+	q0q2, a, q1q3
+	q0q2, b, q2q3
+	q4, a, q0q2
+	q2q3, a, q4
+	q2q3, b, q1q3
+End
