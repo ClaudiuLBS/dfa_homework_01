@@ -1,12 +1,15 @@
 from nfa_parser_engine import validate_nfa, parse_config
 import sys
 
-if (len(sys.argv) != 3):
+if (len(sys.argv) < 2):
     raise Exception("Correct format is: python nfa_acceptance_engine.py <nfa_config_file> <path>")
-    sys.exit()
 
 nfa_config_file = sys.argv[1]
-path = sys.argv[2]
+
+# Daca nu specificam nimic ca CLI param pt path, atunci consideram ca e gol
+path = ""
+if len(sys.argv) >= 3:
+    path = sys.argv[2]
 nfa_structure = parse_config(nfa_config_file)
 
 
@@ -48,11 +51,12 @@ def test_acceptance(nfa_structure, path):
             for (next_state, next_state_letter) in transitions[states_chain[-1]]:
                 if next_state_letter == current_letter:
                     queue.append(states_chain + [next_state])
+                    #print("Trecem din {} in {} prin simbolul {}".format(states_chain[-1], next_state, next_state_letter))
                 # De asemenea, daca avem stari la care ajungem din starea curenta prin epsilon,
                 # atunci adaugam drumuri drumuri si prentru acestea
-                if next_state_letter == '*':
-                    queue.append(states_chain + [next_state])
-                    remaining_epsilon_transitions = True
+                # if next_state_letter == '*':
+                #     queue.append(states_chain + [next_state])
+                #     remaining_epsilon_transitions = True
 
         # print(queue)
         if path != "":
