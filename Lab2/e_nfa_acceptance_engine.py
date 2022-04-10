@@ -1,7 +1,7 @@
 from nfa_parser_engine import validate_nfa, parse_config
 import sys
 
-if (len(sys.argv) < 2):
+if len(sys.argv) < 2:
     raise Exception("Correct format is: python nfa_acceptance_engine.py <nfa_config_file> <path>")
 
 nfa_config_file = sys.argv[1]
@@ -25,7 +25,6 @@ def test_acceptance(nfa_structure, path):
     remaining_epsilon_transitions = True
 
     while path != "" or remaining_epsilon_transitions == True:
-
 
         # Daca am ajuns sa consum toate literele, nu voi mai continua
         # cu urmatoarea iteratie in while decat daca la acest pas
@@ -51,27 +50,18 @@ def test_acceptance(nfa_structure, path):
             for (next_state, next_state_letter) in transitions[states_chain[-1]]:
                 if next_state_letter == current_letter:
                     queue.append(states_chain + [next_state])
-                    #print("Trecem din {} in {} prin simbolul {}".format(states_chain[-1], next_state, next_state_letter))
-                # De asemenea, daca avem stari la care ajungem din starea curenta prin epsilon,
-                # atunci adaugam drumuri drumuri si prentru acestea
-                # if next_state_letter == '*':
-                #     queue.append(states_chain + [next_state])
-                #     remaining_epsilon_transitions = True
-
-        # print(queue)
         if path != "":
             path = path[1:]
 
     return check_complete_path(queue, path_length, final_states)
 
 
-
-
-#verificam daca am ajuns la vreo stare finala, adica daca cuvantul a fost valdiat
+# verificam daca am ajuns la vreo stare finala, adica daca cuvantul a fost valdiat
 def check_complete_path(queue, path_length, final_states):
     for item in queue:
         if len(item) > path_length and item[-1] in final_states:
             return True
     return False
+
 
 print(test_acceptance(nfa_structure, path))
