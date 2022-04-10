@@ -55,7 +55,7 @@ def pretty_print(input_matrix:dict):
       print(f'({item[0]}, {item[1]}) ', end='')
     print()
 
-def validate_nfa(nfa_structure):
+def validate_nfa(nfa_structure, is_epsilon_nfa = False):
   (sigma, states, initial_states, final_states, transitions) = nfa_structure
   if len(initial_states) != 1 or len(final_states)==0:
     return False
@@ -69,7 +69,7 @@ def validate_nfa(nfa_structure):
 
     for end_state,transition_letter in transitions[start_state]:
       # nu-i litera in alfabet
-      if transition_letter not in sigma:
+      if transition_letter not in sigma + (['*'] if is_epsilon_nfa else []):
         return False
       # drumu nu duce la un state valid
       if end_state not in states:
