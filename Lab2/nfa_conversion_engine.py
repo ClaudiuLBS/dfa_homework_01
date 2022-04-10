@@ -21,8 +21,6 @@ def nfa_converter(nfa_config_file):
             # si le unim intr-o singura stare 'new_state'
             new_state=set()
             for sub_state in state:
-                if sub_state == 'q2':
-                    print("")
                 for transition in filter(lambda t: t[1]==symbol, [] if sub_state not in transitions else transitions[sub_state]):
                     new_state.add(transition[0])
 
