@@ -1,0 +1,56 @@
+Filtre:
+	Anvelope:
+		Dimensiunea anvelopelor(ex : 195/65R15)
+	Jante:
+		Dimensiunea jantei
+	Caroserie:
+		Faruri
+		Aripa
+		Bara spate
+		Bara fata
+		Haion
+		Oglinzi
+		Altele
+	Piese interior:
+		Navigatie
+		Nuca schimbator de viteze
+		Husa auto
+		Volan
+		Boxe
+		Altele
+	Electronice:
+		Senzor parcare
+		Calculator bord
+		Camera auto
+		Display bord
+		Altele
+	Marca masina:
+		BMW
+		VW
+		Audi
+		Mercedes - Benz
+		Altele
+	Stare piesa
+		Noua
+		Uzata
+	Frane:
+		Discuri 
+		Etrieri
+		Pompa frana
+		Butuc
+		Placute frana
+		Altele
+	Piese motor/transmisie:
+		Turbina
+		Injectoare
+		Volanta
+		Ambreiaj
+		Altele
+	Marca masina pentru dezmembrat:
+		BMW
+		Audi
+		VW
+		Mercedes-Benz
+		Altele
+		
+	
