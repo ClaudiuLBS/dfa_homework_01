@@ -22,37 +22,63 @@ class Crawler:
       "19 inch": [],
       "19 inch": [],
       "21 inch": [],
+      "Altele": []
     },
-    "Caroserie": {
-      "Faruri/Stopuri/Alte beculete": [],
-      "Portiere": [],
-      "Eleron": [],
-      "Aripi": [],
+    "Electronice" : {
+      "Senzori": [],
+      "Computer": [],
+      "Altele": [],
     },
     "Interior": {
       "Audio": [],
+      "Navigatie": [],
       "Scaune": [],
       "Elemente bord": [],
       "Mochete": [],
-      "Altele": []
+      "Altele": [],
+      "Tapiterie": [],
+    },
+    "Exterior": {
+      "Faruri/Stopuri/Alte beculete": [],
+      "Portiere/Haioane": [],
+      "Eleron": [],
+      "Aripi": [],
+      "Altele": [],
+    },
+    "Geamuri": {
+      "Parbrizuri": [],
+      "Lunete": [],
+      "Geamuri laterale": [],
     },
     "Carlige remorcare": {
       "Dacia": [],
       "Audi": [],
       "BMW": [],
+      "Altele": []
     },
     "Dezmembrari": {
       "Dacia": [],
       "Audi": [],
       "BMW": [],
+      "Altele": []
     },
     "Motor": {
       "Ambreaj": [],
       "Trubina": [],
       "Injectoare": [],
-      "Chiluasa": [],
+      "Chiuloasa": [],
       "Volanta": [],
       "Altele": [],
+    },
+    "Transmisie": {
+      "Cutii de viteze": [],
+      "Diferentiale/Cutii de transfer": [],
+    },
+    "Marca Masina": {
+      "Dacia": [],
+      "Audi": [],
+      "BMW": [],
+      "Altele": []
     },
     "Altele": [], 
   }
