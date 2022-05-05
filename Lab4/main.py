@@ -105,19 +105,19 @@ class Crawler:
       found_category = True
 
     if re.search("(j|ge)ant(e|a|ă)|(g|j)en(t|ț)i", lower_title):
-      if re.search("(r| )15( |'|\"|”|;|x)", lower_title):
+      if re.search("(r| )15( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R15"].append(title)
-      elif re.search("(r| )16( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )16( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R16"].append(title)
-      elif re.search("(r| )17( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )17( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R17"].append(title)
-      elif re.search("(r| )18( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )18( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R18"].append(title)
-      elif re.search("(r| )19( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )19( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R19"].append(title)
-      elif re.search("(r| )20( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )20( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R20"].append(title)
-      elif re.search("(r| )21( |'|\"|”|;|x)", lower_title):
+      elif re.search("(r| )21( |'|\"|”|;|x)*?", lower_title):
         self.ad_filters["Jante"]["R21"].append(title)
       else:
         self.ad_filters["Jante"]["Altele"].append(title)
@@ -207,7 +207,7 @@ class Crawler:
       self.ad_filters["Transmisie"]["Altele"].append(title)
       found_category = True
 
-    if re.search("dezmembr", lower_title):
+    if re.search("de(z|s)membr", lower_title):
       if re.search("dacia", lower_title):
         self.ad_filters["Dezmembrari"]["Dacia"].append(title)
         found_category = True
