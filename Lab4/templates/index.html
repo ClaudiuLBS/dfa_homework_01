@@ -5,15 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dobos cel mai bun profesor</title>
+    <link rel="stylesheet" href="index.css">
+
   </head>
   <body>
+
+    <style> 
+
+
+
+  * {
+    font-family: sans-serif;
+  } 
+
+    .top {
+      font-size: 35px;
+      font-weight: bold;
+      color: blue;
+    }
+
+    .top_category {
+      font-size: 25px;
+      font-weight: bold;
+      color:brown;
+    }
+
+
+
+
+  </style>
     Salutare domnule Dobos
     <ul>
       {% for category in ad_filters %}
-      <li>{{ category }}</li>
+      <li class="top">{{ category }}</li>
       <ul>
         {% for subcategory in ad_filters[category] %}
-        <li>{{ subcategory }}</li>
+        <li class="top_category">{{ subcategory }}</li>
         <ul>
           {% for title in ad_filters[category][subcategory] %}
           <li>{{ title }}</li>
