@@ -31,6 +31,17 @@
     }
 
 
+    table {
+      border: 1px;
+    }
+
+
+    tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+
 
 
   </style>
@@ -41,11 +52,14 @@
       <ul>
         {% for subcategory in ad_filters[category] %}
         <li class="top_category">{{ subcategory }}</li>
-        <ul>
+        <table border="1 px solid #000">
+          
           {% for title in ad_filters[category][subcategory] %}
-          <li>{{ title }}</li>
+          <tr><td style="padding: 10px">{{ title }}</td></tr>
           {% endfor %}
-        </ul>
+          
+          </tr>
+        </table>
         {% endfor %}
       </ul>
       {% endfor %}
