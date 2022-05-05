@@ -9,8 +9,18 @@
   <body>
     Salutare domnule Dobos
     <ul>
-      {% for title in titles %}
-      <li>{{title}}</li>
+      {% for category in ad_filters %}
+      <li>{{ category }}</li>
+      <ul>
+        {% for subcategory in ad_filters[category] %}
+        <li>{{ subcategory }}</li>
+        <ul>
+          {% for title in ad_filters[category][subcategory] %}
+          <li>{{ title }}</li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </ul>
       {% endfor %}
     </ul>
   </body>
