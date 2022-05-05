@@ -1,5 +1,4 @@
 import threading
-from jmespath import search
 import requests
 import time
 import re
@@ -68,12 +67,24 @@ class Crawler:
       "Dacia": [],
       "Audi": [],
       "BMW": [],
+      "Ford": [],
+      "Mercedes": [],
+      "Opel": [],
+      "Renault": [],
+      "Skoda": [],
+      "Volkswagen": [],
       "Altele": []
     },
     "Marca Masina": {
       "Dacia": [],
       "Audi": [],
       "BMW": [],
+      "Ford": [],
+      "Mercedes": [],
+      "Opel": [],
+      "Renault": [],
+      "Skoda": [],
+      "Volkswagen": [],
       "Altele": []
     },
     "Altele": [], 
@@ -187,10 +198,10 @@ class Crawler:
       found_category = True
 
     if re.search("viteze", lower_title):
-      self.ad_filters["Transimisie"]["Cutii de viteze"].append(title)
+      self.ad_filters["Transmisie"]["Cutii de viteze"].append(title)
       found_category = True
-    if re.search("diferen(t|ț)ial|grup|transfer"):
-      self.ad_filters["Transimisie"]["Diferentiale/Cutii de transfer"].append(title)
+    if re.search("diferen(t|ț)ial|grup|transfer", lower_title):
+      self.ad_filters["Transmisie"]["Diferentiale/Cutii de transfer"].append(title)
       found_category = True
     if re.search("transmisie", lower_title) and not found_category:
       self.ad_filters["Transmisie"]["Altele"].append(title)
@@ -200,28 +211,65 @@ class Crawler:
       if re.search("dacia", lower_title):
         self.ad_filters["Dezmembrari"]["Dacia"].append(title)
         found_category = True
-      if re.search("audi", lower_title):
+      elif re.search("audi", lower_title):
         self.ad_filters["Dezmembrari"]["Audi"].append(title)
         found_category = True
-      if re.search("bmw", lower_title):
+      elif re.search("bmw", lower_title):
         self.ad_filters["Dezmembrari"]["BMW"].append(title)
         found_category = True
-      if re.search("ford", lower_title):
+      elif re.search("ford", lower_title):
         self.ad_filters["Dezmembrari"]["Ford"].append(title)
         found_category = True
-      if re.search("mercedes", lower_title):
+      elif re.search("mercedes", lower_title):
         self.ad_filters["Dezmembrari"]["Mercedes"].append(title)
         found_category = True
-      if re.search("opel", lower_title):
+      elif re.search("opel", lower_title):
         self.ad_filters["Dezmembrari"]["Opel"].append(title)
         found_category = True
-      if re.search("renault", lower_title):
+      elif re.search("renault", lower_title):
         self.ad_filters["Dezmembrari"]["Renault"].append(title)
         found_category = True
+      elif re.search("skoda", lower_title):
+        self.ad_filters["Dezmembrari"]["Skoda"].append(title)
+        found_category = True
+      elif re.search("volkswagen|vw|passat|golf", lower_title):
+        self.ad_filters["Dezmembrari"]["Volkswagen"].append(title)
+        found_category = True
+      else:
+        self.ad_filters["Dezmembrari"]["Altele"].append(title)
+        found_category = True
       
-      
-      
-      
+    if re.search("dacia", lower_title):
+      self.ad_filters["Marca Masina"]["Dacia"].append(title)
+      found_category = True
+    elif re.search("audi", lower_title):
+      self.ad_filters["Marca Masina"]["Audi"].append(title)
+      found_category = True
+    elif re.search("bmw", lower_title):
+      self.ad_filters["Marca Masina"]["BMW"].append(title)
+      found_category = True
+    elif re.search("ford", lower_title):
+      self.ad_filters["Marca Masina"]["Ford"].append(title)
+      found_category = True
+    elif re.search("mercedes", lower_title):
+      self.ad_filters["Marca Masina"]["Mercedes"].append(title)
+      found_category = True
+    elif re.search("opel", lower_title):
+      self.ad_filters["Marca Masina"]["Opel"].append(title)
+      found_category = True
+    elif re.search("renault", lower_title):
+      self.ad_filters["Marca Masina"]["Renault"].append(title)
+      found_category = True
+    elif re.search("skoda", lower_title):
+      self.ad_filters["Marca Masina"]["Skoda"].append(title)
+      found_category = True
+    elif re.search("volkswagen|vw|passat|golf", lower_title):
+      self.ad_filters["Marca Masina"]["Volkswagen"].append(title)
+      found_category = True
+    else:
+      self.ad_filters["Marca Masina"]["Altele"].append(title)
+
+  
     if not found_category:
       self.ad_filters["Altele"].append(title)
     
