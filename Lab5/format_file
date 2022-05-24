@@ -1,0 +1,22 @@
+Variables :
+   S, S
+   A
+   B
+   C
+   E
+End
+
+
+Terminals :
+    a
+    e
+    c
+End
+
+
+Productions :
+    S -> A C | B | #
+    A -> a #
+    C -> c | B C | #
+    E -> a A | e
+End

@@ -1,0 +1,14 @@
+Variables:
+S, S
+A
+C
+End
+Terminals:
+a
+c
+End
+Productions:
+S -> A C | #
+A -> a #
+C -> c | #
+End
