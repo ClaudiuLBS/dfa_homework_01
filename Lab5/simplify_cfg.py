@@ -54,7 +54,9 @@ def reduce_cfg(cfg):
                         i-=1
                         break
                 i+=1
-            
+            if productions[var]==[]:
+                productions[var]=[["#"]]
+
     y=[start_variables[0]]
     y_prev=[]
     while y!=y_prev:
@@ -80,6 +82,8 @@ def reduce_cfg(cfg):
                         i-=1
                         break
                 i+=1
+            if productions[var]==[]:
+                productions[var]=[["#"]]
 
     return variables, start_variables, terminals, productions
 
