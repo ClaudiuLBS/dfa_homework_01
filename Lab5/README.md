@@ -3,33 +3,33 @@
 ## Format
 Variables :
      
-  variable1
+&nbsp;variable1
   
-  variable2
+&nbsp;variable2
   
-  '''
+&nbsp;'''
   
-  variablek 
+&nbsp;variablek 
   
 End
 
 
 Terminals :
 
-  terminal1
+&nbsp;terminal1
   
-  terminal2
+&nbsp;terminal2
   
-  ...
+&nbsp;...
   
-  terminalk
+&nbsp;terminalk
   
 End
 
 
 Productions :
 
-variable_i -> variable_i    |    variable_j variable_k
+&nbsp;variable_i -> variable_i    |    variable_j variable_k
     
  ...
     

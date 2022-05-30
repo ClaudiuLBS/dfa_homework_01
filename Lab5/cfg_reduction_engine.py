@@ -89,7 +89,6 @@ def deleteUselessProductions(cfg):
                 productions[var] = [["#"]]
 
 
-
 def deleteSymbol(symbol_to_delete, symbol, string, productions):
     for i in range(len(string)):
         if string[i] == symbol_to_delete:
