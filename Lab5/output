@@ -1,14 +1,17 @@
 Variables:
 S, S
 A
+B
 C
+E
 End
 Terminals:
 a
 c
+e
 End
 Productions:
-S -> A C | #
-A -> a #
-C -> c | #
+S -> A C | C
+A -> a
+C -> c
 End

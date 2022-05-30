@@ -9,14 +9,14 @@ End
 
 Terminals :
     a
-    e
     c
+    e
 End
 
 
 Productions :
-    S -> A C | B | #
-    A -> a #
-    C -> c | B C | #
+    S -> A C | B
+    A -> a | #
+    C -> c
     E -> a A | e
 End
